@@ -1,0 +1,69 @@
+:root{
+  --gap: 18px;
+  --max-width: 1100px;
+  --accent: #1b6df4;
+  --card-bg: #f8f8f8;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, Arial, sans-serif}
+body{background:#fff;color:#111;display:flex;flex-direction:column;min-height:100vh}
+.site-header{background:#fff;border-bottom:1px solid #eee;padding:14px 20px;text-align:center}
+.site-header h1{font-size:20px}
+
+.container{max-width:var(--max-width);margin:24px auto;padding:0 16px;flex:1}
+
+.hero{display:flex;justify-content:center;margin-bottom:18px}
+.category-box{border:2px solid var(--accent);padding:10px 18px;border-radius:8px;font-weight:600;color:var(--accent)}
+
+.section-title{margin:8px 0 12px 6px;font-size:18px}
+
+.cards-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap:var(--gap);
+  align-items:start;
+}
+
+/* Card styling - use aspect-ratio to keep square */
+.card{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition:transform .16s ease, box-shadow .16s ease;
+  border:1px solid #e7e7e7;
+}
+
+.card:focus, .card:hover{transform:translateY(-6px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+.card-inner{display:flex;flex-direction:column;height:100%}
+
+/* make exact square */
+.card-image{
+  aspect-ratio: 1 / 1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#666;
+  background:linear-gradient(180deg, #fff,#f1f1f1);
+}
+
+/* title area */
+.card-title{
+  padding:10px;
+  font-size:15px;
+  font-weight:600;
+  border-top:1px solid #eee;
+  text-align:center;
+}
+
+/* reviews area and footer */
+.reviews{margin:28px 6px}
+.review-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+.site-footer{border-top:1px solid #eee;padding:16px;text-align:center;font-size:14px;margin-top:24px}
+@media (max-width:420px){
+  .section-title{font-size:16px}
+}
