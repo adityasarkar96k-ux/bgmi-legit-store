@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Account Detail</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>BGMI Account Detail</h1>
+  </header>
+
+  <main class="container">
+    <a href="index.html">← Back to Home</a>
+
+    <section style="margin-top:18px">
+      <h2 id="acc-title">Account Title</h2>
+      <div style="margin-top:12px;padding:12px;border:1px solid #eee;border-radius:8px;">
+        <p id="acc-desc">Here account description will appear. You can add price, features, screenshots, login info (only after purchase) etc.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© All rights received</p>
+  </footer>
+
+  <script>
+    // Simple script to read query param and show different content
+    const params = new URLSearchParams(location.search);
+    const id = params.get('card') || '1';
+    document.getElementById('acc-title').textContent = 'BGMI Account #' + id;
+    document.getElementById('acc-desc').textContent = 'Detail page for account ' + id + '. इथे account ची माहिती, किंमत आणि contact/Buy बटण ठेवा.';
+  </script>
+</body>
+</html>
