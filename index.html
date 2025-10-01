@@ -1,98 +1,50 @@
-<!doctype html>
-<html lang="mr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BGMI Legit - Store</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMI UC Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>Legit Store</h1>
+  <header>
+    <h1>BGMI UC Store</h1>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="category-box">BGMI Accounts</div>
+  <main>
+    <section id="uid-section">
+      <h2>Enter Your UID</h2>
+      <input type="text" id="uidInput" placeholder="Enter BGMI UID">
+      <button id="uidSubmit">Submit</button>
     </section>
 
-    <section class="cards-section">
-      <h2 class="section-title">Cards</h2>
-
-      <div class="cards-grid">
-        <!-- Make copies of card and change href to the specific detail page -->
-        <a class="card" href="card-detail.html?card=1" aria-label="Card 1 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 1</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=2" aria-label="Card 2 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 2</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=3" aria-label="Card 3 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 3</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=4" aria-label="Card 4 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 4</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=5" aria-label="Card 5 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 5</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=6" aria-label="Card 6 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 6</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=7" aria-label="Card 7 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 7</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=8" aria-label="Card 8 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 8</div>
-          </div>
-        </a>
-
-        <a class="card" href="card-detail.html?card=9" aria-label="Card 9 - BGMI Account">
-          <div class="card-inner">
-            <div class="card-image">IMG</div>
-            <div class="card-title">Account 9</div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="reviews">
-      <p>Here you see customer <a class="review-btn" href="reviews.html">Review</a></p>
+    <section id="packs-section" class="hidden">
+      <h2>Select Your UC Pack</h2>
+      <div id="packsContainer" class="packs"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© All rights received</p>
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>Complete Your Payment</h3>
+      <div class="payment-methods">
+        <button class="payBtn">PhonePe</button>
+        <button class="payBtn">GPay</button>
+        <button class="payBtn">Paytm</button>
+        <button class="payBtn">Fampay</button>
+      </div>
+      <div class="qr-section">
+        <img src="qr.png" alt="Payment QR" id="qrImage">
+        <p id="timer">05:00</p>
+      </div>
+      <p id="thankyouMsg" class="hidden">✅ Thank you for your purchase!<br>Your UC will be delivered within 24 hours.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BGMI UC Store — Safe & Secure</p>
   </footer>
 
   <script src="script.js"></script>
