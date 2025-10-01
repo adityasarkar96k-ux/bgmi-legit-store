@@ -2,49 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BGMI UC Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>BGMI UC Store</h1>
+  <header class="site-header">
+    <div class="logo">BGMI UC</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">View Plans</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section id="uid-section">
-      <h2>Enter Your UID</h2>
-      <input type="text" id="uidInput" placeholder="Enter BGMI UID">
-      <button id="uidSubmit">Submit</button>
-    </section>
+  <section class="hero">
+    <h1>Instant BGMI UC Delivery</h1>
+    <p>Provide your UID, select the plan, pay via QR & get the UC delivered.</p>
+  </section>
 
-    <section id="packs-section" class="hidden">
-      <h2>Select Your UC Pack</h2>
-      <div id="packsContainer" class="packs"></div>
-    </section>
-  </main>
+  <section class="uid-section">
+    <h2>Enter Your UID</h2>
+    <input type="text" id="uidInput" placeholder="Enter your BGMI UID">
+    <button id="uidSubmit">Continue</button>
+    <p id="playerName" class="player-name"></p>
+  </section>
+
+  <section class="packs-section hidden" id="packsSection">
+    <h2>Choose Your Pack</h2>
+    <div class="packs-container" id="packsContainer">
+      <!-- packs will be injected via JS -->
+    </div>
+  </section>
 
   <!-- Payment Modal -->
-  <div id="paymentModal" class="modal hidden">
+  <div class="modal hidden" id="paymentModal">
     <div class="modal-content">
-      <span id="closeModal">&times;</span>
-      <h3>Complete Your Payment</h3>
-      <div class="payment-methods">
-        <button class="payBtn">PhonePe</button>
-        <button class="payBtn">GPay</button>
-        <button class="payBtn">Paytm</button>
-        <button class="payBtn">Fampay</button>
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Complete Payment</h3>
+      <div class="methods">
+        <button class="pay-btn" data-method="phonepe">PhonePe</button>
+        <button class="pay-btn" data-method="gpay">GPay</button>
+        <button class="pay-btn" data-method="paytm">Paytm</button>
+        <button class="pay-btn" data-method="fampay">Fampay</button>
       </div>
-      <div class="qr-section">
-        <img src="qr.png" alt="Payment QR" id="qrImage">
-        <p id="timer">05:00</p>
+      <div class="qr-area hidden" id="qrArea">
+        <img src="qr.png" alt="QR Code" id="qrImage">
+        <div class="timer" id="timer">05:00</div>
       </div>
-      <p id="thankyouMsg" class="hidden">✅ Thank you for your purchase!<br>Your UC will be delivered within 24 hours.</p>
+      <div class="thank-area hidden" id="thankArea">
+        <p>✅ Thank you! Your UC will be delivered within 24 hours.</p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>© 2025 BGMI UC Store — Safe & Secure</p>
+  <footer class="site-footer">
+    <p>© 2025 BGMI UC Store — All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
