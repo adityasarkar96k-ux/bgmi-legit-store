@@ -1,67 +1,102 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d0d0d;
-  color: #fff;
-  text-align: center;
-}
+/* Reset & basic */
+body, h1, h2, p, ul { margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #0b0b0b; color: #fff; }
+.hidden { display: none; }
 
-header {
+/* Header */
+.site-header {
   background: #111;
-  padding: 20px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header .logo {
   font-size: 24px;
-  font-weight: bold;
-  color: #ffcc00;
+  color: #ffd700;
+}
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.site-header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-#uid-section {
-  margin: 30px auto;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h1 {
+  font-size: 36px;
+  color: #ffd700;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ddd;
 }
 
-#uidInput {
-  padding: 10px;
-  width: 250px;
+/* UID section */
+.uid-section {
+  text-align: center;
+  margin: 40px 20px;
+}
+.uid-section input {
+  padding: 12px;
+  width: 240px;
   border: none;
   border-radius: 8px;
+  margin-right: 10px;
 }
-
-#uidSubmit {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background: #ffcc00;
+.uid-section button {
+  padding: 12px 20px;
+  background: #ffd700;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
+.player-name {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ffd700;
+}
 
-#packsContainer {
+/* Packs */
+.packs-section {
+  text-align: center;
+  margin: 30px 20px;
+}
+.packs-container {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin: 20px auto;
 }
-
 .pack {
   background: #1a1a1a;
   border-radius: 12px;
   padding: 20px;
-  width: 200px;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+  width: 180px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
 }
-
 .pack h3 {
-  margin: 10px 0;
-  color: #ffcc00;
+  color: #ffd700;
 }
-
+.pack p {
+  font-size: 16px;
+  margin: 10px 0;
+}
 .pack button {
-  margin-top: 10px;
   padding: 10px;
-  width: 100%;
-  background: #ffcc00;
+  background: #ffd700;
   border: none;
   border-radius: 8px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -75,39 +110,57 @@ header {
   justify-content: center;
   align-items: center;
 }
-
 .modal-content {
   background: #1a1a1a;
-  padding: 20px;
   border-radius: 12px;
-  width: 300px;
+  padding: 20px;
+  width: 320px;
+  position: relative;
 }
-
-#closeModal {
-  float: right;
+.close-btn {
+  position: absolute;
+  top: 12px; right: 15px;
+  font-size: 22px;
   cursor: pointer;
-  font-size: 24px;
 }
-
-.payment-methods {
+.methods {
   display: flex;
   justify-content: space-around;
   margin: 15px 0;
 }
-
-.qr-section img {
+.methods .pay-btn {
+  padding: 10px;
+  background: #ffd700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.qr-area {
+  text-align: center;
+}
+.qr-area img {
   width: 200px;
   margin: 15px 0;
 }
-
-#timer {
-  font-size: 18px;
-  color: #ffcc00;
+.timer {
+  font-size: 20px;
+  color: #ffd700;
+}
+.thank-area {
+  text-align: center;
+  margin-top: 20px;
 }
 
-footer {
+/* Footer fixed bottom */
+.site-footer {
   background: #111;
+  text-align: center;
   padding: 15px;
-  margin-top: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-.hidden { display: none; }
+.site-footer p {
+  color: #ccc;
+  font-size: 14px;
+}
