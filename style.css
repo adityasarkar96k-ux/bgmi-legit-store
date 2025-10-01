@@ -1,166 +1,69 @@
-/* Reset & basic */
-body, h1, h2, p, ul { margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; background: #0b0b0b; color: #fff; }
-.hidden { display: none; }
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#070809;--card:#0f1113;--accent:#ffd200;--muted:#9aa2a8;--glass:rgba(255,255,255,0.03)
+}
+body{
+  font-family: Inter, system-ui, Arial; background:linear-gradient(180deg,#060708 0%,#0b0b0b 100%); color:#fff; min-height:100vh; padding-bottom:80px;
+}
 
 /* Header */
-.site-header {
-  background: #111;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.site-header{
+  display:flex;justify-content:space-between;align-items:center;padding:16px 36px;background:linear-gradient(180deg,#0b0b0b,#0a0a0a);position:sticky;top:0;z-index:40;
+  border-bottom:1px solid rgba(255,255,255,0.02)
 }
-.site-header .logo {
-  font-size: 24px;
-  color: #ffd700;
-}
-.site-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.site-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;object-fit:contain}
+.brand-text .title{font-weight:800;color:var(--accent);font-size:20px}
+.brand-text .subtitle{font-size:12px;color:var(--muted)}
+.nav a{color:#ddd;text-decoration:none;margin-left:18px}
 
 /* Hero */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-.hero h1 {
-  font-size: 36px;
-  color: #ffd700;
-}
-.hero p {
-  margin-top: 10px;
-  font-size: 18px;
-  color: #ddd;
-}
+.hero{padding:48px 24px;text-align:center;background-image:url('assets/hero-bg.jpg');background-size:cover;background-position:center}
+.hero-inner{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45));display:inline-block;padding:28px;border-radius:12px}
+.hero h1{font-size:34px;color:var(--accent);margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:12px}
+.hero-gif img{width:140px;margin-top:12px}
 
-/* UID section */
-.uid-section {
-  text-align: center;
-  margin: 40px 20px;
-}
-.uid-section input {
-  padding: 12px;
-  width: 240px;
-  border: none;
-  border-radius: 8px;
-  margin-right: 10px;
-}
-.uid-section button {
-  padding: 12px 20px;
-  background: #ffd700;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.player-name {
-  margin-top: 15px;
-  font-size: 18px;
-  color: #ffd700;
-}
+/* UID card */
+.uid-block{display:flex;justify-content:center;padding:24px}
+.uid-card{width:680px;max-width:95%;background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02)}
+.lbl{color:var(--muted);display:block;margin-bottom:10px}
+.uid-row{display:flex;gap:10px}
+.uid-row input{flex:1;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+.btn-primary{background:var(--accent);color:#08111a;padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+.uid-msg{margin-top:10px;color:var(--muted)}
 
-/* Packs */
-.packs-section {
-  text-align: center;
-  margin: 30px 20px;
+/* Packs grid */
+.packs-section{padding:24px}
+.packs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.pack{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6)
 }
-.packs-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.pack {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 20px;
-  width: 180px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-}
-.pack h3 {
-  color: #ffd700;
-}
-.pack p {
-  font-size: 16px;
-  margin: 10px 0;
-}
-.pack button {
-  padding: 10px;
-  background: #ffd700;
-  border: none;
-  border-radius: 8px;
-  width: 100%;
-  cursor: pointer;
-}
+.pack .uc{font-weight:800;font-size:20px;margin-bottom:6px;color:var(--accent)}
+.pack .price{font-weight:700;margin-bottom:10px}
+.pack .buy-btn{width:100%;padding:10px;border-radius:8px;border:none;background:#0b2438;color:#fff;cursor:pointer}
 
 /* Modal */
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 20px;
-  width: 320px;
-  position: relative;
-}
-.close-btn {
-  position: absolute;
-  top: 12px; right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-}
-.methods {
-  display: flex;
-  justify-content: space-around;
-  margin: 15px 0;
-}
-.methods .pay-btn {
-  padding: 10px;
-  background: #ffd700;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.qr-area {
-  text-align: center;
-}
-.qr-area img {
-  width: 200px;
-  margin: 15px 0;
-}
-.timer {
-  font-size: 20px;
-  color: #ffd700;
-}
-.thank-area {
-  text-align: center;
-  margin-top: 20px;
-}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,12,0.6);z-index:60}
+.modal-card{width:420px;max-width:92%;background:var(--card);padding:18px;border-radius:12px;position:relative;border:1px solid rgba(255,255,255,0.03)}
+.modal-close{position:absolute;right:12px;top:8px;background:transparent;border:none;color:#fff;font-size:22px;cursor:pointer}
+.pay-methods{display:flex;gap:8px;justify-content:space-between;margin:12px 0}
+.pay-btn{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;cursor:pointer}
+.qr-area{display:flex;gap:12px;align-items:center}
+.qr-image{width:150px;height:150px;object-fit:contain;background:#fff;padding:8px;border-radius:8px}
+.countdown{font-weight:800;color:var(--accent);font-size:20px}
+.paid-actions{display:flex;gap:8px;margin-top:12px}
+.btn-muted{background:#2b2b2b;color:#ddd;padding:10px;border-radius:8px;border:none;cursor:pointer}
+.thank-area{margin-top:12px}
 
 /* Footer fixed bottom */
-.site-footer {
-  background: #111;
-  text-align: center;
-  padding: 15px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-.site-footer p {
-  color: #ccc;
-  font-size: 14px;
-}
+.site-footer{position:fixed;left:0;right:0;bottom:0;background:#080808;padding:14px;border-top:1px solid rgba(255,255,255,0.02)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto}
+.footer-links a{color:var(--muted);text-decoration:none;margin-left:10px;font-size:13px}
+
+/* Utility */
+.hidden{display:none}
+.small{font-size:13px;color:var(--muted)}
