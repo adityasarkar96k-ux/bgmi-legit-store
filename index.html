@@ -1,65 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BGMI UC Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BGMI UC — Instant Store</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">BGMI UC</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">View Plans</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <div class="brand">
+      <img src="assets/logo.png" alt="logo" class="logo">
+      <div class="brand-text">
+        <div class="title">BGMI UC Store</div>
+        <div class="subtitle">Instant delivery • Secure QR Payment</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Packs</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Instant BGMI UC Delivery</h1>
-    <p>Provide your UID, select the plan, pay via QR & get the UC delivered.</p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Instant UC Delivery — Fast & Trusted</h1>
+        <p class="lead">Enter your BGMI UID, pick a pack, pay with QR and receive UC within 24 hours.</p>
+        <div class="hero-gif"><img src="assets/gif-1.gif" alt="anim"></div>
+      </div>
+    </section>
 
-  <section class="uid-section">
-    <h2>Enter Your UID</h2>
-    <input type="text" id="uidInput" placeholder="Enter your BGMI UID">
-    <button id="uidSubmit">Continue</button>
-    <p id="playerName" class="player-name"></p>
-  </section>
+    <section class="uid-block">
+      <div class="uid-card">
+        <label class="lbl">Enter your BGMI UID (no login required)</label>
+        <div class="uid-row">
+          <input id="uidInput" type="text" placeholder="Enter BGMI UID (numeric)">
+          <button id="uidSubmit" class="btn-primary">Verify</button>
+        </div>
+        <div id="uidMessage" class="uid-msg">UID: —</div>
+      </div>
+    </section>
 
-  <section class="packs-section hidden" id="packsSection">
-    <h2>Choose Your Pack</h2>
-    <div class="packs-container" id="packsContainer">
-      <!-- packs will be injected via JS -->
-    </div>
-  </section>
+    <section id="packsSection" class="packs-section hidden">
+      <div class="packs-grid" id="packsContainer"></div>
+    </section>
+  </main>
 
   <!-- Payment Modal -->
-  <div class="modal hidden" id="paymentModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h3>Complete Payment</h3>
-      <div class="methods">
+  <div id="paymentModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <h3 id="modalTitle">Complete Payment</h3>
+      <div class="pay-methods">
         <button class="pay-btn" data-method="phonepe">PhonePe</button>
         <button class="pay-btn" data-method="gpay">GPay</button>
         <button class="pay-btn" data-method="paytm">Paytm</button>
         <button class="pay-btn" data-method="fampay">Fampay</button>
       </div>
-      <div class="qr-area hidden" id="qrArea">
-        <img src="qr.png" alt="QR Code" id="qrImage">
-        <div class="timer" id="timer">05:00</div>
+
+      <div id="qrArea" class="qr-area hidden">
+        <img id="qrImage" src="assets/qr.png" alt="QR" class="qr-image" />
+        <div class="count-wrapper">
+          <div class="countdown" id="countdown">05:00</div>
+          <div class="small">Scan QR and complete payment. Order delivers within 24 hours after confirmation.</div>
+        </div>
       </div>
-      <div class="thank-area hidden" id="thankArea">
-        <p>✅ Thank you! Your UC will be delivered within 24 hours.</p>
+
+      <div id="paidActions" class="paid-actions hidden">
+        <button id="paidBtn" class="btn-primary">I Have Paid</button>
+        <button id="cancelBtn" class="btn-muted">Cancel</button>
+      </div>
+
+      <div id="thankArea" class="thank-area hidden">
+        <div class="thank-title">Thank you for your purchase!</div>
+        <div class="small">Your order will be delivered within 24 hours. Order ID: <span id="orderId"></span></div>
       </div>
     </div>
   </div>
 
   <footer class="site-footer">
-    <p>© 2025 BGMI UC Store — All rights reserved.</p>
+    <div class="footer-inner">
+      <div>© 2025 BGMI UC Store — Fast & Secure</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Support</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
