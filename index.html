@@ -1,91 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BGMI UC — Instant Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grab Instant UC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/logo.png" alt="logo" class="logo">
-      <div class="brand-text">
-        <div class="title">BGMI UC Store</div>
-        <div class="subtitle">Instant delivery • Secure QR Payment</div>
-      </div>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Grab UC Logo">
     </div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Packs</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div class="menu">
+      <span class="icon">&#9776;</span>
+      <span class="search">&#128269;</span>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <h1>Instant UC Delivery — Fast & Trusted</h1>
-        <p class="lead">Enter your BGMI UID, pick a pack, pay with QR and receive UC within 24 hours.</p>
-        <div class="hero-gif"><img src="assets/gif-1.gif" alt="anim"></div>
-      </div>
-    </section>
+  <!-- Background -->
+  <div class="background"></div>
 
-    <section class="uid-block">
-      <div class="uid-card">
-        <label class="lbl">Enter your BGMI UID (no login required)</label>
-        <div class="uid-row">
-          <input id="uidInput" type="text" placeholder="Enter BGMI UID (numeric)">
-          <button id="uidSubmit" class="btn-primary">Verify</button>
-        </div>
-        <div id="uidMessage" class="uid-msg">UID: —</div>
-      </div>
-    </section>
-
-    <section id="packsSection" class="packs-section hidden">
-      <div class="packs-grid" id="packsContainer"></div>
-    </section>
-  </main>
-
-  <!-- Payment Modal -->
-  <div id="paymentModal" class="modal hidden">
-    <div class="modal-card">
-      <button id="closeModal" class="modal-close">&times;</button>
-      <h3 id="modalTitle">Complete Payment</h3>
-      <div class="pay-methods">
-        <button class="pay-btn" data-method="phonepe">PhonePe</button>
-        <button class="pay-btn" data-method="gpay">GPay</button>
-        <button class="pay-btn" data-method="paytm">Paytm</button>
-        <button class="pay-btn" data-method="fampay">Fampay</button>
-      </div>
-
-      <div id="qrArea" class="qr-area hidden">
-        <img id="qrImage" src="assets/qr.png" alt="QR" class="qr-image" />
-        <div class="count-wrapper">
-          <div class="countdown" id="countdown">05:00</div>
-          <div class="small">Scan QR and complete payment. Order delivers within 24 hours after confirmation.</div>
-        </div>
-      </div>
-
-      <div id="paidActions" class="paid-actions hidden">
-        <button id="paidBtn" class="btn-primary">I Have Paid</button>
-        <button id="cancelBtn" class="btn-muted">Cancel</button>
-      </div>
-
-      <div id="thankArea" class="thank-area hidden">
-        <div class="thank-title">Thank you for your purchase!</div>
-        <div class="small">Your order will be delivered within 24 hours. Order ID: <span id="orderId"></span></div>
-      </div>
-    </div>
+  <!-- Center Box -->
+  <div class="center-box">
+    <input type="text" id="uidInput" placeholder="Enter BGMI Player ID">
+    <button onclick="verifyUID()">Verify</button>
+    <p id="playerName"></p>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>© 2025 BGMI UC Store — Fast & Secure</div>
-      <div class="footer-links">
-        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Support</a>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Grab Instant UC — Safe & Secure</p>
   </footer>
 
   <script src="script.js"></script>
